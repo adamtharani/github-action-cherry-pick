@@ -28,7 +28,7 @@ PR_BRANCH="auto-$GITHUB_SHA"
 MERGE_COMMIT=$(git log -1 $GITHUB_SHA | grep "Merge" | wc -l | xargs)
 ALLOW_MERGES=""
 
-if [[ $MERGE_COMMIT -eq 1 ]]; then
+if [[ $MERGE_COMMIT -ge 1 ]]; then
   ALLOW_MERGES="-m 1"
 fi
 
